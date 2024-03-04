@@ -17,6 +17,7 @@ struct LoginView: View {
                 .padding(.bottom, 39)
             Group {
                 TextField("Email or Phone Number", text: $email )
+                    .keyboardType(.emailAddress)
                     .padding(.horizontal, 15)
                     .padding(.vertical, 13.5)
                     .background(Color(hexCode: "#FAFAFA"))
@@ -28,17 +29,14 @@ struct LoginView: View {
                     )
                     .padding(.bottom, 12)
                 
-                TextField("Password", text: $password)
+                SecureField("Password", text: $password)
                     .padding(.horizontal, 15)
                     .padding(.vertical, 13.5)
                     .background(Color(hexCode: "#FAFAFA"))
-                
-                    // 상동
                     .cornerRadius(5)
                     .overlay(
                         RoundedRectangle(cornerRadius: 5)
                             .stroke(Color(UIColor.systemGray3), lineWidth: 0.5)
-                            
                     )
                 
                 HStack {
@@ -126,26 +124,11 @@ struct LoginView: View {
                         .foregroundStyle(Color(hexCode: "#3797EF"))
                 }
             }
-            .padding(.bottom, 61)
             .font(.system(size: 14))
             
             
-            Divider()
-            
-            HStack {
-                Spacer()
-                
-                Text("Instagram from Meta")
-                    .foregroundStyle(Color(hexCode: "#999999"))
-                    .padding(.vertical, 32.5)
-                    .font(.system(size: 12))
-                
-                Spacer()
-            }
-        }
-        
+        } // NavigationStack
     }
-    
 }
 
 #Preview {
