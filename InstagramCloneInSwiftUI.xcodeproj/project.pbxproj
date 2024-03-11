@@ -28,7 +28,7 @@
 		991D345A2B8B54D100810D21 /* Preview Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = "Preview Assets.xcassets"; sourceTree = "<group>"; };
 		991D34632B8B552000810D21 /* LoginView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LoginView.swift; sourceTree = "<group>"; };
 		991D34662B8B5C5C00810D21 /* ColorExtension.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ColorExtension.swift; sourceTree = "<group>"; };
-		999CCF362B9F80EE005E179D /* User.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; name = User.swift; path = ../../Model/User.swift; sourceTree = "<group>"; };
+		999CCF362B9F80EE005E179D /* User.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = User.swift; sourceTree = "<group>"; };
 		999CCF3A2B9F81A2005E179D /* MainTabView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MainTabView.swift; sourceTree = "<group>"; };
 		999CCF3C2B9F81B8005E179D /* MainView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MainView.swift; sourceTree = "<group>"; };
 		999CCF3E2B9F81CC005E179D /* StoryView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = StoryView.swift; sourceTree = "<group>"; };
@@ -116,8 +116,7 @@
 			children = (
 				999CCF362B9F80EE005E179D /* User.swift */,
 			);
-			name = Model;
-			path = Extensions/Model;
+			path = Model;
 			sourceTree = "<group>";
 		};
 		999CCF382B9F80F9005E179D /* TabView */ = {
