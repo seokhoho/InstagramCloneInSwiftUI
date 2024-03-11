@@ -2,7 +2,7 @@
 //  InstagramCloneInSwiftUIApp.swift
 //  InstagramCloneInSwiftUI
 //
-//  Created by 정유진 on 2024/02/25.
+//  Created by 정석호 on 2024/02/25.
 //
 
 import SwiftUI
@@ -11,7 +11,7 @@ import SwiftUI
 struct InstagramCloneInSwiftUIApp: App {
     var body: some Scene {
         WindowGroup {
-            LoginView()
+            MainTabView()
         }
     }
 }
