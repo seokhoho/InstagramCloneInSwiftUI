@@ -19,17 +19,14 @@ struct FeedCell: View {
     var body: some View {
         
         VStack(alignment: .leading, spacing: 0) {
-            // 킹피셔
-            // 프로필 사진, 이름, 주소, 인증, 더보기
+            
+            // 프로필 사진, 이름, 주소, 인증, 더보기 기능동작 필요
             HStack(spacing: 0) {
                 
                 ZStack {
                     
-                    Image(user.profileImage)
-                        .resizable()
-                        .aspectRatio(contentMode: .fill)
+                    URLImage(url: URL(string: user.profileImageURL)!, size: CGSize(width: 32, height: 32))
                         .clipShape(Circle())
-                        .frame(width: 32, height: 32)
                         .padding(.horizontal, 10)
                         .padding(.vertical, 11)
                     
@@ -44,7 +41,7 @@ struct FeedCell: View {
                     Text(user.name)
                         .font(.system(size: 13))
                         .fontWeight(.semibold)
-                    // 주소가 있다면? 없다면
+                   
                     if let address = feed.address {
                         Text(address)
                             .font(.system(size: 11))
@@ -69,11 +66,8 @@ struct FeedCell: View {
             // 좌우에 맞게 이미지, 이미지 갯수에 맞게 스크롤 되야함, 인디게이터 생성해야함
             ScrollView(.horizontal) {
                 LazyHGrid(rows: gridItems) {
-                    ForEach (feed.feedImage, id: \.self) { image in
-                        Image(image)
-                            .resizable()
-                            .aspectRatio(contentMode: .fill)
-                            .frame(width: 375, height: 375)
+                    ForEach (feed.feedImageURL, id: \.self) { url in
+                        URLImage(url: URL(string: url)!, size: CGSize(width: 375, height: 375))
                             .clipped()
                         // 이미지를 어떻게 설정할 것인지
                     }
@@ -144,9 +138,9 @@ struct FeedCell: View {
     FeedCell(feed: Feed(id: "f333",
                         userId: "333",
                         address: "서울",
-                        feedImage: ["why", "stop"],
+                        feedImageURL: ["https://i.postimg.cc/gkBVvxT7/why.jpg", "https://i.postimg.cc/mr77f8gx/stop.jpg"],
                         text: "나한태 왜..."),
-             user: User(id: "333", name: "santa", profileImage: "santa", liveState: false)
+             user: User(id: "333", name: "pepe", profileImageURL: "https://i.postimg.cc/cLpfbVZM/pepe.jpg", liveState: false)
                             
     )
 }
