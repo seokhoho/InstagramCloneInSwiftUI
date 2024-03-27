@@ -8,49 +8,58 @@ import SwiftUI
 
 struct MainView: View {
     
-    var userStore: Store
+    // 스토리 스토어도 만들어서 스토리 뷰에 넣어야한다
+    @ObservedObject var feedStore: FeedStore
+    @ObservedObject var userStore: UserStore
+    @ObservedObject var storyStore: StoryStore
     
     var body: some View {
         NavigationStack {
             ScrollView {
                 
-                StoryView(userStore: userStore)
+                StoryView(userStore: userStore, storyStore: storyStore)
             
                 Divider()
             
-                FeedView(store: userStore)
+                FeedView(feedStore: feedStore, userStore: userStore)
                 
             } // ScrollView
             
             .toolbar {
-                ToolbarItem(placement: .topBarLeading) {
-                    NavigationLink {
-                        
-                        // 카메라
-                        
-                    } label: {
-                        Image("carmera")
-                    }
-                }
-                
-                ToolbarItem(placement: .topBarLeading) {
-                    
-                    Image("navigationLogo")
-                        .padding(.leading, 79)
-                }
-                
-                ToolbarItem(placement: .topBarTrailing) {
-                    NavigationLink {
-                        
-                        // 메세지 뷰
-                        
-                    } label: {
-                        Image("messanger")
+                ToolbarItem(placement: .navigation) {
+                    VStack {
+                        HStack {
+                            Button {
+                                
+                                // 카메라
+//
+                                
+                            } label: {
+                                Image("carmera")
+                                    .padding(.horizontal)
+                            }
+                            
+                            Spacer()
+                            
+                            Image("navigationLogo")
+                                
+                            Spacer()
+                            
+                            NavigationLink {
+                                
+                                // 메세지 뷰
+                                
+                            } label: {
+                                Image("messanger")
+                                    .padding(.leading)
+                            }
+                        }
+                        .frame(width: UIScreen.main.bounds.width)
                     }
                 }
             }
-            
-            
+            // 화이트 모드를 위해 흰색 배경
+            .background(Color.white)
         } // NavigationStack
         
         
@@ -58,5 +67,5 @@ struct MainView: View {
 }
 
 #Preview {
-    MainView(userStore: Store())
+    MainView(feedStore: FeedStore(), userStore: UserStore(), storyStore: StoryStore())
 }

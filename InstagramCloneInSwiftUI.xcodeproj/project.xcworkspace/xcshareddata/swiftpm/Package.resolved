@@ -1,6 +1,15 @@
 {
   "pins" : [
     {
+      "identity" : "briefpagingcontrol",
+      "kind" : "remoteSourceControl",
+      "location" : "https://github.com/tkarlz/BriefPagingControl.git",
+      "state" : {
+        "revision" : "01b85148dd4a5d80eb054cd11411c6251f190d83",
+        "version" : "1.0.1"
+      }
+    },
+    {
       "identity" : "kingfisher",
       "kind" : "remoteSourceControl",
       "location" : "https://github.com/onevcat/Kingfisher.git",

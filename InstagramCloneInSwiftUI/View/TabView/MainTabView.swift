@@ -8,12 +8,14 @@ import SwiftUI
 
 struct MainTabView: View {
     
-    var store = Store()
+    @ObservedObject var feedStore = FeedStore()
+    @ObservedObject var userStore = UserStore()
+    @ObservedObject var storyStore = StoryStore()
     
     var body: some View {
         TabView {
             
-            MainView(userStore: store)
+            MainView(feedStore: feedStore, userStore: userStore, storyStore: storyStore)
                 .tabItem {
                     Image("home")
                 }

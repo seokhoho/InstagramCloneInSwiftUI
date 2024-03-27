@@ -21,14 +21,12 @@ struct StoryCell: View {
                 URLImage(url: URL(string: user.profileImageURL)!, size: CGSize(width: 56, height: 56))
                     .clipShape(Circle())
                     
-                Circle() // 테두리
-                    .strokeBorder(Color.orange, lineWidth: 2) // 컬러 변환
+                Image("cover")
                     .frame(width: 63, height: 63)
-                
                 
                 if user.liveState {
                     Image("live")
-                        .offset(y: 28)
+                        .offset(y: 29)
                 }
             }
                 
@@ -36,11 +34,10 @@ struct StoryCell: View {
                 .font(.system(size: 12))
                 .padding(.top, 5)
                 .foregroundStyle(Color.black)
-                
         }
     }
 }
 
 #Preview {
-    StoryCell(user: User(id: UUID().uuidString, name: "pepe", profileImageURL: "https://i.postimg.cc/P5pmKtG5/santa.jpg", liveState: false))
+    StoryCell(user: User(id: UUID().uuidString, name: "pepe", profileImageURL: "https://i.postimg.cc/P5pmKtG5/santa.jpg", liveState: true))
 }

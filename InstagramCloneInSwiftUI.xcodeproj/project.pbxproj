@@ -7,6 +7,7 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		991134442BB41BBC0031E9B2 /* BriefPagingControl in Frameworks */ = {isa = PBXBuildFile; productRef = 991134432BB41BBC0031E9B2 /* BriefPagingControl */; };
 		991D34542B8B54CF00810D21 /* InstagramCloneInSwiftUIApp.swift in Sources */ = {isa = PBXBuildFile; fileRef = 991D34532B8B54CF00810D21 /* InstagramCloneInSwiftUIApp.swift */; };
 		991D34582B8B54D100810D21 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 991D34572B8B54D100810D21 /* Assets.xcassets */; };
 		991D345B2B8B54D100810D21 /* Preview Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 991D345A2B8B54D100810D21 /* Preview Assets.xcassets */; };
@@ -21,6 +22,12 @@
 		999CCF452B9F8233005E179D /* FeedCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 999CCF442B9F8233005E179D /* FeedCell.swift */; };
 		99A3F5402BA034410093837C /* Kingfisher in Frameworks */ = {isa = PBXBuildFile; productRef = 99A3F53F2BA034410093837C /* Kingfisher */; };
 		99A3F5422BA0346D0093837C /* URLImage.swift in Sources */ = {isa = PBXBuildFile; fileRef = 99A3F5412BA0346D0093837C /* URLImage.swift */; };
+		99B3473A2BA8370600610574 /* UserStore.swift in Sources */ = {isa = PBXBuildFile; fileRef = 99B347392BA8370600610574 /* UserStore.swift */; };
+		99B3473C2BA8379B00610574 /* FeedStore.swift in Sources */ = {isa = PBXBuildFile; fileRef = 99B3473B2BA8379B00610574 /* FeedStore.swift */; };
+		99B3473E2BA838F100610574 /* Feed.swift in Sources */ = {isa = PBXBuildFile; fileRef = 99B3473D2BA838F100610574 /* Feed.swift */; };
+		99B347482BADAB1800610574 /* CustomDetent.swift in Sources */ = {isa = PBXBuildFile; fileRef = 99B347472BADAB1800610574 /* CustomDetent.swift */; };
+		99B3474A2BADAF9100610574 /* Story.swift in Sources */ = {isa = PBXBuildFile; fileRef = 99B347492BADAF9100610574 /* Story.swift */; };
+		99B3474C2BADAFE600610574 /* StoryStore.swift in Sources */ = {isa = PBXBuildFile; fileRef = 99B3474B2BADAFE600610574 /* StoryStore.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -38,6 +45,12 @@
 		999CCF422B9F81F6005E179D /* FeedView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FeedView.swift; sourceTree = "<group>"; };
 		999CCF442B9F8233005E179D /* FeedCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FeedCell.swift; sourceTree = "<group>"; };
 		99A3F5412BA0346D0093837C /* URLImage.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = URLImage.swift; sourceTree = "<group>"; };
+		99B347392BA8370600610574 /* UserStore.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UserStore.swift; sourceTree = "<group>"; };
+		99B3473B2BA8379B00610574 /* FeedStore.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FeedStore.swift; sourceTree = "<group>"; };
+		99B3473D2BA838F100610574 /* Feed.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Feed.swift; sourceTree = "<group>"; };
+		99B347472BADAB1800610574 /* CustomDetent.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CustomDetent.swift; sourceTree = "<group>"; };
+		99B347492BADAF9100610574 /* Story.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Story.swift; sourceTree = "<group>"; };
+		99B3474B2BADAFE600610574 /* StoryStore.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = StoryStore.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -46,6 +59,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				99A3F5402BA034410093837C /* Kingfisher in Frameworks */,
+				991134442BB41BBC0031E9B2 /* BriefPagingControl in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -74,6 +88,7 @@
 				991D34532B8B54CF00810D21 /* InstagramCloneInSwiftUIApp.swift */,
 				991D34652B8B5C3800810D21 /* Extensions */,
 				999CCF2F2B9F7F96005E179D /* Model */,
+				99B347382BA836E300610574 /* ViewModel */,
 				991D34612B8B54EC00810D21 /* View */,
 				991D34572B8B54D100810D21 /* Assets.xcassets */,
 				991D34592B8B54D100810D21 /* Preview Content */,
@@ -119,7 +134,10 @@
 			isa = PBXGroup;
 			children = (
 				999CCF362B9F80EE005E179D /* User.swift */,
+				99B3473D2BA838F100610574 /* Feed.swift */,
+				99B347492BADAF9100610574 /* Story.swift */,
 				99A3F5412BA0346D0093837C /* URLImage.swift */,
+				99B347472BADAB1800610574 /* CustomDetent.swift */,
 			);
 			path = Model;
 			sourceTree = "<group>";
@@ -144,6 +162,16 @@
 			path = MainView;
 			sourceTree = "<group>";
 		};
+		99B347382BA836E300610574 /* ViewModel */ = {
+			isa = PBXGroup;
+			children = (
+				99B347392BA8370600610574 /* UserStore.swift */,
+				99B3473B2BA8379B00610574 /* FeedStore.swift */,
+				99B3474B2BADAFE600610574 /* StoryStore.swift */,
+			);
+			path = ViewModel;
+			sourceTree = "<group>";
+		};
 /* End PBXGroup section */
 
 /* Begin PBXNativeTarget section */
@@ -162,6 +190,7 @@
 			name = InstagramCloneInSwiftUI;
 			packageProductDependencies = (
 				99A3F53F2BA034410093837C /* Kingfisher */,
+				991134432BB41BBC0031E9B2 /* BriefPagingControl */,
 			);
 			productName = InstargramCloneInSwiftUI;
 			productReference = 991D34502B8B54CF00810D21 /* InstagramCloneInSwiftUI.app */;
@@ -193,6 +222,7 @@
 			mainGroup = 991D34472B8B54CF00810D21;
 			packageReferences = (
 				99A3F53E2BA034410093837C /* XCRemoteSwiftPackageReference "Kingfisher" */,
+				991134422BB41BBC0031E9B2 /* XCRemoteSwiftPackageReference "BriefPagingControl" */,
 			);
 			productRefGroup = 991D34512B8B54CF00810D21 /* Products */;
 			projectDirPath = "";
@@ -222,12 +252,18 @@
 			files = (
 				999CCF372B9F80EE005E179D /* User.swift in Sources */,
 				999CCF452B9F8233005E179D /* FeedCell.swift in Sources */,
+				99B3473C2BA8379B00610574 /* FeedStore.swift in Sources */,
+				99B3474C2BADAFE600610574 /* StoryStore.swift in Sources */,
+				99B3474A2BADAF9100610574 /* Story.swift in Sources */,
+				99B3473E2BA838F100610574 /* Feed.swift in Sources */,
 				999CCF432B9F81F6005E179D /* FeedView.swift in Sources */,
 				999CCF3D2B9F81B8005E179D /* MainView.swift in Sources */,
 				991D34642B8B552000810D21 /* LoginView.swift in Sources */,
 				999CCF412B9F81E8005E179D /* StoryCell.swift in Sources */,
+				99B3473A2BA8370600610574 /* UserStore.swift in Sources */,
 				999CCF3F2B9F81CC005E179D /* StoryView.swift in Sources */,
 				991D34542B8B54CF00810D21 /* InstagramCloneInSwiftUIApp.swift in Sources */,
+				99B347482BADAB1800610574 /* CustomDetent.swift in Sources */,
 				991D34672B8B5C5C00810D21 /* ColorExtension.swift in Sources */,
 				999CCF3B2B9F81A2005E179D /* MainTabView.swift in Sources */,
 				99A3F5422BA0346D0093837C /* URLImage.swift in Sources */,
@@ -367,6 +403,7 @@
 				DEVELOPMENT_TEAM = 9XB7FH3RZ5;
 				ENABLE_PREVIEWS = YES;
 				GENERATE_INFOPLIST_FILE = YES;
+				INFOPLIST_KEY_NSCameraUsageDescription = "This app needs to capture image to show in the app.";
 				INFOPLIST_KEY_UIApplicationSceneManifest_Generation = YES;
 				INFOPLIST_KEY_UIApplicationSupportsIndirectInputEvents = YES;
 				INFOPLIST_KEY_UILaunchScreen_Generation = YES;
@@ -397,6 +434,7 @@
 				DEVELOPMENT_TEAM = 9XB7FH3RZ5;
 				ENABLE_PREVIEWS = YES;
 				GENERATE_INFOPLIST_FILE = YES;
+				INFOPLIST_KEY_NSCameraUsageDescription = "This app needs to capture image to show in the app.";
 				INFOPLIST_KEY_UIApplicationSceneManifest_Generation = YES;
 				INFOPLIST_KEY_UIApplicationSupportsIndirectInputEvents = YES;
 				INFOPLIST_KEY_UILaunchScreen_Generation = YES;
@@ -440,6 +478,14 @@
 /* End XCConfigurationList section */
 
 /* Begin XCRemoteSwiftPackageReference section */
+		991134422BB41BBC0031E9B2 /* XCRemoteSwiftPackageReference "BriefPagingControl" */ = {
+			isa = XCRemoteSwiftPackageReference;
+			repositoryURL = "https://github.com/tkarlz/BriefPagingControl.git";
+			requirement = {
+				kind = upToNextMajorVersion;
+				minimumVersion = 1.0.1;
+			};
+		};
 		99A3F53E2BA034410093837C /* XCRemoteSwiftPackageReference "Kingfisher" */ = {
 			isa = XCRemoteSwiftPackageReference;
 			repositoryURL = "https://github.com/onevcat/Kingfisher.git";
@@ -451,6 +497,11 @@
 /* End XCRemoteSwiftPackageReference section */
 
 /* Begin XCSwiftPackageProductDependency section */
+		991134432BB41BBC0031E9B2 /* BriefPagingControl */ = {
+			isa = XCSwiftPackageProductDependency;
+			package = 991134422BB41BBC0031E9B2 /* XCRemoteSwiftPackageReference "BriefPagingControl" */;
+			productName = BriefPagingControl;
+		};
 		99A3F53F2BA034410093837C /* Kingfisher */ = {
 			isa = XCSwiftPackageProductDependency;
 			package = 99A3F53E2BA034410093837C /* XCRemoteSwiftPackageReference "Kingfisher" */;
