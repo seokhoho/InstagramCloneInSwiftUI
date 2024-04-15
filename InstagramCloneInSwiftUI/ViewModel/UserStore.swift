@@ -13,7 +13,8 @@ class UserStore: ObservableObject {
     @Published var dummy: [User] = [
         User(id: "333", name: "pepe", profileImageURL: "https://i.postimg.cc/cLpfbVZM/pepe.jpg",
              feed: [
-                "f333"
+                "f333", "f334", "f335", "f336", "f337", "f338", "f339", "f340", "f341"
+                ,"f342", "f343", "f344", "f345", "f346", "f347", "f348", "f349"
              ],
 //             saveFeed: [
 //                "f333"

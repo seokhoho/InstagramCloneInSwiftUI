@@ -17,6 +17,7 @@ struct User: Identifiable {
     var saveFeed: [String] = []
     var story: [String]?
     var liveState: Bool
+    // 팔로우, 팔로워, 프로필 상태 메세지 프로퍼티 필요함
 }
 
 
