@@ -12,7 +12,6 @@
 		9911344F2BB4AE580031E9B2 /* CommentSheetView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9911344E2BB4AE580031E9B2 /* CommentSheetView.swift */; };
 		991134512BB4AE6B0031E9B2 /* ShareSheetView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 991134502BB4AE6B0031E9B2 /* ShareSheetView.swift */; };
 		991134532BB4AE7C0031E9B2 /* SettingSheetView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 991134522BB4AE7C0031E9B2 /* SettingSheetView.swift */; };
-		991134552BB4AE850031E9B2 /* SaveSheetView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 991134542BB4AE850031E9B2 /* SaveSheetView.swift */; };
 		991134572BBB3CA70031E9B2 /* ProfileTextView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 991134562BBB3CA70031E9B2 /* ProfileTextView.swift */; };
 		991134592BBC00520031E9B2 /* ProfileFeedPreView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 991134582BBC00520031E9B2 /* ProfileFeedPreView.swift */; };
 		9911345B2BBF247D0031E9B2 /* ProfileCategoryView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9911345A2BBF247D0031E9B2 /* ProfileCategoryView.swift */; };
@@ -38,6 +37,7 @@
 		99B347482BADAB1800610574 /* CustomDetent.swift in Sources */ = {isa = PBXBuildFile; fileRef = 99B347472BADAB1800610574 /* CustomDetent.swift */; };
 		99B3474A2BADAF9100610574 /* Story.swift in Sources */ = {isa = PBXBuildFile; fileRef = 99B347492BADAF9100610574 /* Story.swift */; };
 		99B3474C2BADAFE600610574 /* StoryStore.swift in Sources */ = {isa = PBXBuildFile; fileRef = 99B3474B2BADAFE600610574 /* StoryStore.swift */; };
+		99BA9EC82BD7B5C900667CBB /* MyFeedSettingSheetView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 99BA9EC72BD7B5C900667CBB /* MyFeedSettingSheetView.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -45,7 +45,6 @@
 		9911344E2BB4AE580031E9B2 /* CommentSheetView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CommentSheetView.swift; sourceTree = "<group>"; };
 		991134502BB4AE6B0031E9B2 /* ShareSheetView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ShareSheetView.swift; sourceTree = "<group>"; };
 		991134522BB4AE7C0031E9B2 /* SettingSheetView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SettingSheetView.swift; sourceTree = "<group>"; };
-		991134542BB4AE850031E9B2 /* SaveSheetView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SaveSheetView.swift; sourceTree = "<group>"; };
 		991134562BBB3CA70031E9B2 /* ProfileTextView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ProfileTextView.swift; sourceTree = "<group>"; };
 		991134582BBC00520031E9B2 /* ProfileFeedPreView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ProfileFeedPreView.swift; sourceTree = "<group>"; };
 		9911345A2BBF247D0031E9B2 /* ProfileCategoryView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ProfileCategoryView.swift; sourceTree = "<group>"; };
@@ -71,6 +70,7 @@
 		99B347472BADAB1800610574 /* CustomDetent.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CustomDetent.swift; sourceTree = "<group>"; };
 		99B347492BADAF9100610574 /* Story.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Story.swift; sourceTree = "<group>"; };
 		99B3474B2BADAFE600610574 /* StoryStore.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = StoryStore.swift; sourceTree = "<group>"; };
+		99BA9EC72BD7B5C900667CBB /* MyFeedSettingSheetView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MyFeedSettingSheetView.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -195,7 +195,7 @@
 				9911344E2BB4AE580031E9B2 /* CommentSheetView.swift */,
 				991134502BB4AE6B0031E9B2 /* ShareSheetView.swift */,
 				991134522BB4AE7C0031E9B2 /* SettingSheetView.swift */,
-				991134542BB4AE850031E9B2 /* SaveSheetView.swift */,
+				99BA9EC72BD7B5C900667CBB /* MyFeedSettingSheetView.swift */,
 			);
 			path = MainView;
 			sourceTree = "<group>";
@@ -299,6 +299,7 @@
 				99B3474A2BADAF9100610574 /* Story.swift in Sources */,
 				99B3473E2BA838F100610574 /* Feed.swift in Sources */,
 				991134532BB4AE7C0031E9B2 /* SettingSheetView.swift in Sources */,
+				99BA9EC82BD7B5C900667CBB /* MyFeedSettingSheetView.swift in Sources */,
 				999CCF432B9F81F6005E179D /* FeedView.swift in Sources */,
 				991134572BBB3CA70031E9B2 /* ProfileTextView.swift in Sources */,
 				999CCF3D2B9F81B8005E179D /* MainView.swift in Sources */,
@@ -314,7 +315,6 @@
 				99A3F5422BA0346D0093837C /* URLImage.swift in Sources */,
 				9911345B2BBF247D0031E9B2 /* ProfileCategoryView.swift in Sources */,
 				9911344F2BB4AE580031E9B2 /* CommentSheetView.swift in Sources */,
-				991134552BB4AE850031E9B2 /* SaveSheetView.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

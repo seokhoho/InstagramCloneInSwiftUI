@@ -10,6 +10,11 @@ import Foundation
 class FeedStore: ObservableObject {
     
     @Published var dummyFeed = [
+        Feed(id: "f222",
+             userId: "222",
+             address: "대구, 대한민국",
+             feedImageURL: ["https://i.postimg.cc/6QQvnd9K/LFn52-RECt4.jpg"],
+             text: "야레야레~"),
         Feed(id: "f333",
              userId: "333",
              address: "서울, 대한민국",

@@ -42,6 +42,19 @@ class UserStore: ObservableObject {
              story: [
                "s123"
              ],
+             liveState: false),
+        
+        User(id: "222", name: "hello", profileImageURL: "https://i.postimg.cc/6QQvnd9K/LFn52-RECt4.jpg",
+             feed: [
+                "f222"
+             ],
+             liveState: false)
+        ,
+
+        User(id: "223", name: "hello2", profileImageURL: "https://i.postimg.cc/QtLwxP9g/money.jpg",
+             feed: [
+                
+             ],
              liveState: false)
     ]
     

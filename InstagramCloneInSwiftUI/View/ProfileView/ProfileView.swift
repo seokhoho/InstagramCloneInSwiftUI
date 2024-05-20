@@ -135,38 +135,38 @@ struct ProfileView: View {
                     ProfileFeedPreView(user: user, feedStore: feedStore)
                         .tag(ProfileTag.feed)
                     
+                        .onAppear {
+                            
+                            var temp = feedStore.dummyFeed.filter { $0.userId == user.id }.count / 3
+                            if feedStore.dummyFeed.filter({ $0.userId == user.id }).count % 3 > 0 {
+                                temp += 1
+                            }
+                            // 기본 화면사이즈보다 작으면 기본 화면사이즈까지만?
+                            frameSize = CGFloat(12 + (temp * 125))
+                        }
+                    // 탭 값이 변할 때 다시 실행하게끔 구현해야한다.
                     Text("릴스탭")
                         .tag(ProfileTag.reels)
+                        .onAppear {
+                            frameSize = CGFloat(500)
+                        }
                     
                     Text("태그탭")
                         .tag(ProfileTag.tags)
+                    
 
                 }
                 .tabViewStyle(.page(indexDisplayMode: .never))
-                // 각 뷰의 사이즈에 맞는 상하의 사이즈가 필요한데 이걸 어떻게 구하지?
-                .frame(height: frameSize)
-                
-                // 탭뷰가 바뀔 때 즉 피드와 릴스로 넘어갈 때마다 반복해야한다
                 .onAppear {
+                    var temp = feedStore.dummyFeed.filter { $0.userId == user.id }.count / 3
                     
-                    // 피드, 태그일 때 릴스일 때 피드 태그 125 릴스 그 이상
-                    var temp = 0
-                    
-                    if profileTag == .feed {
-                        temp = feedStore.dummyFeed.filter { $0.userId == user.id }.count / 3
-                        if feedStore.dummyFeed.filter({ $0.userId == user.id }).count % 3 > 0 {
-                            temp += 1
-                        }
-                        // 기본 화면사이즈보다 작으면 기본 화면사이즈까지만?
-                        frameSize = CGFloat(12 + (temp * 125))
-                    } else if profileTag == .feed {
-                        // reels의 갯수를 찾아 사이즈를 구하기
-//                        frameSize = CGFloat(12 + (temp * 180))
-                    } else {
-                        // 태그된 게시글
-                        //frameSize = CGFloat(12 + (temp * 125))
+                    if feedStore.dummyFeed.filter({ $0.userId == user.id }).count % 3 > 0 {
+                        temp += 1
                     }
+                
+                    frameSize = CGFloat(12 + (temp * 125))
                 }
+                .frame(height: frameSize)
                 
             } // ScrollView
             .toolbar {

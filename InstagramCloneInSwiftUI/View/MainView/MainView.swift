@@ -8,7 +8,6 @@ import SwiftUI
 
 struct MainView: View {
     
-    // 스토리 스토어도 만들어서 스토리 뷰에 넣어야한다
     @ObservedObject var feedStore: FeedStore
     @ObservedObject var userStore: UserStore
     @ObservedObject var storyStore: StoryStore
@@ -32,7 +31,6 @@ struct MainView: View {
                             Button {
                                 
                                 // 카메라
-//
                                 
                             } label: {
                                 Image("carmera")

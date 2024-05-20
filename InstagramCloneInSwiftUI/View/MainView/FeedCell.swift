@@ -19,6 +19,7 @@ struct FeedCell: View {
     @State var showShareSheet: Bool = false
     @State var showSaveFeedSheet: Bool = false
     @State var showSettingSheet: Bool = false
+    @State var showMySettingSheet: Bool = false
     @State var feedIndex: Int = 0
     
     var body: some View {
@@ -80,8 +81,18 @@ struct FeedCell: View {
                     
                     Button {
                         
+                        // 피드의 종류에 따라 시트가 달라져서 올라온다. 피드/릴스, 나의피드/
+                        // 피드의 유저아이디로 나의 피드 다른 유저의 피드를 나누어 띄우기
+                        // 하지만 현재 유저가 누구인지 모른다 그냥 유저로 가면 안된다.
+                        // userStore.dummy[0].feed?.contain으로 분기를 주었는데 전부 true로 값이 나왔다 하지만 first로 하니 분기가 제대로 작동했다. contain이 문자열 중 문자 하나라도 겹치면 작동하는 것 같다.
+                        
                         // 설정
-                        showSettingSheet.toggle()
+                        
+                        if let _ =  userStore.dummy[0].feed?.first(where: {$0 == feedId}) {
+                            showMySettingSheet.toggle()
+                        } else {
+                            showSettingSheet.toggle()
+                        }
                         
                     } label: {
                         Image("dot")
@@ -238,30 +249,88 @@ struct FeedCell: View {
             .padding(.bottom, 13)
             
         } // NavigationStack
-        .sheet(isPresented: $showSettingSheet) {
-            Text("세팅 시트")
+        .sheet(isPresented: $showMySettingSheet) {
+            
+            MyFeedSettingSheetView()
                 .presentationDetents([
-                    .medium,
                     .custom(CustomDetent.self)
                 ])
+                .presentationDragIndicator(.visible)
+            
         }
-        .sheet(isPresented: $showCommentSheet) {
-            Text("댓글 시트 첫화면 텍스트 필드,키보드 올라오기")
+        
+        .sheet(isPresented: $showSettingSheet) {
+            
+            SettingSheetView()
                 .presentationDetents([
-                    .medium,
+                    .height(UIScreen.main.bounds.height / 1.9)
+                ])
+                .presentationDragIndicator(.visible)
+        }
+    
+        .sheet(isPresented: $showCommentSheet) {
+            
+            // 처음 큰화면 + 키보드 활성화
+            
+            CommentSheetView()
+                .presentationDetents([
+                    .height(UIScreen.main.bounds.height / 1.5),
                     .custom(CustomDetent.self)
                 ])
         }
         .sheet(isPresented: $showShareSheet) {
-            Text("공유 시트 첫화면 반만 나오기")
+            ShareSheetView(user: user, userStore: userStore)
                 .presentationDetents([
                     .medium,
                     .custom(CustomDetent.self)
+                    
                 ])
         }
         .sheet(isPresented: $showSaveFeedSheet) {
             
-            Text("저장 시트")
+            
+            HStack {
+                URLImage(url: URL(string: feed.feedImageURL[0])!, size: CGSize(width: 70, height: 70))
+                    .cornerRadius(10)
+                    .padding(.trailing, 6)
+                
+                VStack(alignment: .leading, spacing: 3) {
+                    if let userSaveFeed = userStore.dummy.first(where: { $0.id == user.id })?.saveFeed, userSaveFeed.contains(feedId) {
+                        Text("저장됨")
+                            .font(.headline)
+                    } else {
+                        Text("저장")
+                            .font(.headline)
+                    }
+                        
+                    Text("공개")
+                        .font(.subheadline)
+                        .foregroundStyle(Color(hexCode: "C8C8C8"))
+                }
+                
+                Spacer()
+                
+                Button {
+                    
+                    userStore.userSavedFeed(userId: user.id, feedId: feedId)
+                    feedStore.feedSavedUser(userId: user.id, feedId: feedId)
+                    
+                    DispatchQueue.main.asyncAfter(deadline: .now() + 0.5) {
+                        showSaveFeedSheet.toggle()
+                    }
+                    
+                } label: {
+                    
+                    if let userSaveFeed = userStore.dummy.first(where: { $0.id == user.id })?.saveFeed, userSaveFeed.contains(feedId) {
+                        Image("savefill")
+                    } else {
+                        Image("save")
+                    }
+                    
+                }
+                
+            }
+            .padding(.horizontal)
                 .presentationDetents([
                     .height(UIScreen.main.bounds.height / 2.5),
                     .custom(CustomDetent.self)
